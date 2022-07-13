@@ -4,13 +4,25 @@ import { useState } from "react"
 const Add = ({addNote})=>{
 
   const [newtext,setNewtext] = useState('')
+  const carackterLimit = 200
 
   const handleclick =(e)=>{
-    setNewtext(e.target.value)
+    if(carackterLimit -e.target.value.length >= 0){
+      setNewtext(e.target.value)
+    }
+   
   }
   const handleSave = () => {
-addNote(newtext)
+
+    if(newtext.trim().length>0)
+    {
+      addNote(newtext)
+      setNewtext('')
+    }
+
   }
+
+
 
     return(
         <div className="note new">
@@ -23,7 +35,7 @@ addNote(newtext)
             onChange={handleclick}
             ></textarea>
             <div className="note-dri">
-                <small>200 karakter</small>
+                <small> {carackterLimit - newtext.length} karakter</small>
                 <button
                 onClick={handleSave}
                  className="save">Save</button>

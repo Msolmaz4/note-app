@@ -1,7 +1,7 @@
 import Add from './Add'
 import Note from './Note'
 
-const NotList =({notes ,addNote})=>{
+const NotList =({notes ,addNote ,deleteNotes})=>{
     return(
         <div className='note-list'>
             {notes.map((note)=>(
@@ -9,6 +9,7 @@ const NotList =({notes ,addNote})=>{
                 id={note.id}
                 text={note.text}
                 datum={note.datum}
+                deleteNotes = {deleteNotes}
 
 
 

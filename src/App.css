@@ -46,3 +46,20 @@
     background-color: blueviolet;
     cursor: pointer;
   }
+  .search{
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 233,233);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .search input{
+    border: none;
+    background-color: rgb(233, 233,233);
+  }
+  .search input:focus{
+    outline: none;
+  }
+  .header{
+    text-align: center;
+  }
